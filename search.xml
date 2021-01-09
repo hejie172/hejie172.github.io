@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Github+Hexo+Next搭建博客以及遇到的各种坑</title>
+      <link href="2021/01/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>2021/01/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<p>是根据hojun 百家号一步一步做的，再查找各种资料，花费了两天终于给整明白了，其中还遇到各种别的问题参考了别的资料，还是记录一下吧~</p><p>【比较懒，所以记录也很松散，如果后续又发现问题再继续补充吧（顶锅盖逃）】</p><p>1.下载Node.js和git for windows</p><p>（查询是否下载成功node.js：win+R→cmd→node -v）</p><p>2.创建一个新的Repositories，名字填 ××.github.io【这个名字必须是你github的名字，如果不是将会404打不开网页。】</p><p>在存储库里创建一个html文档，仓库地址打开就可以看到该文档了。</p><p>3.添加秘钥。打开git下载的目录，然后点击git-bash.exe</p><p>输入ssh-keygen -t rsa -C “github的注册邮箱地址” （英文引号）</p><p>一路回车，生成秘钥。</p><p>回到Github，点击头像+setting→SSH and GPG keys →New SSH key</p><p>找到C:Users用户名.ssh id_rsa.pub</p><p>把里面的秘钥输入。</p><p>4.建立文档夹c:blog用cmd命令进入文档夹内，安装heox（主页有安装命令，然后初始化）</p><p>5.输入 hexo s -p 5555 （端口）</p><p>6.把文档夹拽入sublime编译器（或者其他的</p><p>打开config文档，需要修改的地方有：名，介绍，关键字，作者，url(“http://用户名.github.io)，保存。</p><p>复制仓库地址。</p><p>在config的最后找到deploy，输入：</p><p>deploy:<br>  type: git<br>  repo: （刚才复制的仓库地址）<br>  branch: master<br>7.安装插件。</p><p>npm install hexo-deployer-git –save</p><p>8.输入 hexo g命令。</p><p>9.修改主题（hexo官网有很多，自行配置</p><p>每次修改config以后都要执行：</p><p>hexo clean<br>hexo generate<br>hexo server<br>10.添加文章（博客根目录cmd命令中即可</p><p>hexo new “xxx”<br>阅读全文代码，在此之后的不会显示主页上。</p><a id="more"></a><p>11.部署到GitHub上：</p><p>hexo d<br>附：</p><p>A：在搭建博客中的各种坑</p><p>1.config文档中每个冒号后都需要一个空格。首行缩进也要遵循，不然会报错（摊手</p><p>比如说修改title、deploy时需要注意下。</p><p>2.fatal: not a git repository (or any of the parent directories): .git</p><p>初始化一波本地仓库。</p><p>$ git init<br>Initialized empty Git repository in C:/Users/xxx/.git/<br>3.使用next主题（按照这个来：<a href="http://theme-next.iissnan.com/getting-started.html">http://theme-next.iissnan.com/getting-started.html</a></p><p>端口被占用的话，用其他端口替代一下。（比如说本地访问<a href="http://localhost:4000/%E4%B8%8D%E8%83%BD%E6%89%93%E5%BC%80%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%88%E6%9C%AC%E4%BA%BA%E7%94%A8%E7%9A%84%E7%AB%AF%E5%8F%A3%E6%98%AF5555">http://localhost:4000/不能打开的时候（本人用的端口是5555</a></p><p>$ hexo s -p 5555 –debug<br>有关于Next主题的配置相关（标签、分类、字数统计之类），建议阅读以下文章：</p><p>4.部署到GitHub上出现如下错误（最后一步了啊喂）：</p><p>error: RPC failed; curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054<br>fatal: the remote end hung up unexpectedlyB | 14.00 KiB/s<br>解决办法：修改Git的传输字节限制，SSL证书略过检查。</p><p>git config –global http.postBuffer  524288000<br>git config –global http.sslVerify false<br>B：记录几个可能会用到的目录</p><p> 站点配置文档config.yml 博库根目录下<br> 主题配置文档config.yml 在next主题里<br> 主题中的footer.swig ：网站底部信息<br> 主题中的sidebar.swig：左/右侧个人信息栏<br> 主题中的post.swig：文章底部标签<br>【其实在搭建过程中遇到的坑还蛮多的，感觉这种事情还得靠玄学，有的人好像就没遇到过（小声bb）<br>感觉所有坑都被我踩了个遍……不过还好，在部署到github上以后，再从自己的网站中打开，感觉人生都光明了~<br>接下来的任务是：创建日历、留言板、评论、书单等内容，希望这个寒假能够整完吧~】</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="2021/01/10/hello-world/"/>
       <url>2021/01/10/hello-world/</url>
