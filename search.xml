@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="2021/01/10/%E5%AD%A6%E4%B9%A0Python%E5%86%99%E7%9A%84%E5%B0%8F%E6%B8%B8%E6%88%8F/"/>
+      <url>2021/01/10/%E5%AD%A6%E4%B9%A0Python%E5%86%99%E7%9A%84%E5%B0%8F%E6%B8%B8%E6%88%8F/</url>
+      
+        <content type="html"><![CDATA[<hr><h2 id="学习Python写的小游戏"><a href="#学习Python写的小游戏" class="headerlink" title="学习Python写的小游戏"></a>学习Python写的小游戏</h2><p>print(“凭记忆”)<br>temp = input(“猜数字”)<br>guess = int(temp)<br>while guess != 8:<br>    temp = input(“不对，重新猜:”)<br>    guess = int(temp)<br>    if guess == 8:<br>        print(“yes”)<br>        print(“不过没奖励”)<br>    else:<br>          if guess &gt;= 8:<br>              print(“大了”)<br>          else:<br>              print(“小了”)<br> print(“结束”)</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Github+Hexo+Next搭建博客以及遇到的各种坑</title>
       <link href="2021/01/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
       <url>2021/01/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
